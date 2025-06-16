@@ -102,7 +102,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 # Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.heapstartsize=24m \
+    dalvik.vm.heapgrowthlimit=512m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=1m \
+    dalvik.vm.heapmaxfree=12m
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
