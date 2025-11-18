@@ -46,3 +46,8 @@ void vendor_process_bootenv() {
             LOG(ERROR) << "Unexpected region ID: " << hw_region_id;
     }
 }
+
+// The error symbol _Z22vendor_load_propertiesv is a global function.
+void vendor_load_properties() {
+    // Dummy implementation for recovery
+}
